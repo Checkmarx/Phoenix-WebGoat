@@ -5,13 +5,13 @@ on: [pull_request,workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: cx-public-ubuntu-x64
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
       
       - name: Checkmarx AST CLI Action
-        uses: checkmarx/ast-github-action@main
+        uses: checkmarx/ast-github-action@dab12e5276a3025532f9723601ec38a4b7a37ed5 # main
         with:
           base_uri: ${{ secrets.BASE_URL }}
           cx_tenant: ${{ secrets.TENANT }}

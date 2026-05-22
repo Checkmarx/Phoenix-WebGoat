@@ -11,12 +11,12 @@ on:
 jobs:
   cx-scan:
     name: Checkmarx One Scan
-    runs-on: ubuntu-latest
+    runs-on: cx-public-ubuntu-x64
     steps:
       - name: Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Checkmarx One CLI Action
-        uses: checkmarx/ast-github-action@daniel-test
+        uses: checkmarx/ast-github-action@5d1bb08e8f5c881087053f97047aa320a97234a1 # daniel-test
         with:
           base_uri: ${{ secrets.AST_RND_SCANS_BASE_URI }}
           cx_tenant: ${{ secrets.AST_RND_SCANS_TENANT }}
